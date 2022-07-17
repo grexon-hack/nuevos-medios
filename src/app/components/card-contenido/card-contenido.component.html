@@ -1,39 +1,20 @@
-<div class="container">
+<div class="container" *ngFor="let content of listContent let i = index">
   <div class="card mb-2 text-start">
     <div class="container card-header">
       <div class="row">
-        <div class="col-lg-11">Featured</div>
+        <div class="col-lg-11">{{content.category}}</div>
         <div class="col-lg-1">
           <i class="fas fa-check-circle"></i>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
+      <h5 class="card-title">{{content.title}}</h5>
       <p class="card-text">
-        With supporting text below as a natural lead-in to additional content.
+        {{content.description }}
       </p>
       <div class="text-end">
-        <a routerLink="/detail/1" class="btn btn-primary">Detail</a>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-2 text-start">
-    <div class="container card-header">
-      <div class="row">
-        <div class="col-lg-11">Educacion</div>
-        <div class="col-lg-1">
-          <i class="fas fa-check-circle"></i>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Universidades en Colombia </h5>
-      <p class="card-text">
-        With supporting text below as a natural lead-in to additional content.
-      </p>
-      <div class="text-end">
-        <a routerLink="/detail/2" class="btn btn-primary">Detail</a>
+        <a routerLink="/detail/{{content.id}}" class="btn btn-primary" (click)="sendingContent(content)">Detail</a>
       </div>
     </div>
   </div>
