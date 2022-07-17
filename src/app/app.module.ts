@@ -14,6 +14,8 @@ import { ContenidoService } from './services/contenido.service';
 import { LoginComponent } from './components/login/login.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { CardContenidoComponent } from './components/card-contenido/card-contenido.component';
+import { RegisterComponent } from './components/register/register.component';
+import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CardContenidoComponent } from './components/card-contenido/card-conteni
     HomeComponent,
     LoginComponent,
     DetailComponent,
-    CardContenidoComponent
+    CardContenidoComponent,
+    RegisterComponent,
+    RecoverPasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,25 @@
 <div class="wrapper">
     <div class="body">
         <img class="logo" src="../../../assets/img/login.png" alt="login-img">
-        <h1>Login</h1>
+        <h1>Register</h1>
         <form>
 
             <div class="form-floating mb-3">
                 <input type="email" class="form-control" placeholder="name@example.com">
                 <label>Email address</label>
-              </div>
-              <div class="form-floating">
+            </div>
+            <div class="form-floating mb-3">
                 <input type="password" class="form-control"placeholder="Password">
                 <label>Password</label>
             </div>
-            <div class="d-grid gap-2 mt-3">
-                <button class="btn btn-primary btn-lg">Login</button>
+            <div class="form-floating">
+                <input type="password" class="form-control"placeholder="Repeat password">
+                <label>Repeat password</label>
             </div>
-            <p>You don't have an account <a routerLink="/register">Register</a></p>
-            <p><i class="fas fa-key"></i> <a routerLink="/recover-password">Recover password</a></p>
+            <div class="d-grid gap-2 my-3">
+                <button class="btn btn-primary btn-lg">Register</button>
+            </div>
+             <a routerLink="/login">Back</a>
         </form>
     </div>
 </div>
-
