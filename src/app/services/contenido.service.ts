@@ -8,11 +8,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ContenidoService {
   private data: ContenidoModel[] = [];
-  private detailContent = new BehaviorSubject<any[]>([])
+  private detailContent = new BehaviorSubject<any[]>([]);
 
   detailContent$ = this.detailContent.asObservable();
 
   constructor(private firestore: AngularFirestore) { }
+
 
   listarContenido(): Observable<any> {
     return this.firestore.collection('contenido', ref => ref.orderBy('name', 'desc')).snapshotChanges();
@@ -23,8 +24,9 @@ export class ContenidoService {
     this.detailContent.next(this.data)
   }
 
-  getDataTranfer() {
-    
+  filterByCategory(data: string): Observable<any> {
+    return this.firestore.collection('contenido', ref => ref.where('category', '==', data)).snapshotChanges();
   }
+
 
 }

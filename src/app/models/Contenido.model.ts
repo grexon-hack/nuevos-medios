@@ -1,5 +1,6 @@
 
 export class ContenidoModel {
+    [x: string]: any;
     id?:string;
     name:string;
     title:string;

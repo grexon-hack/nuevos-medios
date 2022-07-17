@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ContenidoModel } from 'src/app/models/Contenido.model';
 import { ContenidoService } from 'src/app/services/contenido.service';
 
@@ -9,11 +9,31 @@ import { ContenidoService } from 'src/app/services/contenido.service';
 })
 export class CardContenidoComponent implements OnInit {
   listContent: ContenidoModel[] = [];
+
+  @Input() filterContent:ContenidoModel[];
+
   constructor(private contentService: ContenidoService) { }
 
   ngOnInit(): void {
-    this.getAllContent();
-    
+     this.getAllContent();
+
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    if(this.filterContent.length) {
+      this.getFilterContent(this.filterContent)
+    }else {
+      this.getAllContent();
+    }
+  }
+
+  getFilterContent(data: any) {
+    this.listContent = [];
+      data.forEach((resp: any)=> {
+        this.listContent.push({
+          id:resp['payload'].doc.id,
+          ...resp['payload'].doc.data()
+        })
+      })
   }
 
   getAllContent() {

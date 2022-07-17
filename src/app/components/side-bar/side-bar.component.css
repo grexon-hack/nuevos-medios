@@ -1,0 +1,7 @@
+.hoverCategories {
+    cursor: pointer;
+}
+.hoverCategories:hover {
+    color: crimson;
+    transform: scale(1.1);
+}
