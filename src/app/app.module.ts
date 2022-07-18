@@ -16,6 +16,8 @@ import { DetailComponent } from './components/detail/detail.component';
 import { CardContenidoComponent } from './components/card-contenido/card-contenido.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RecoverPasswordComponent } from './components/recover-password/recover-
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [ContenidoService],
   bootstrap: [AppComponent]
