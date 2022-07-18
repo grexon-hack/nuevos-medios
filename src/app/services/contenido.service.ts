@@ -16,7 +16,7 @@ export class ContenidoService {
 
 
   listarContenido(): Observable<any> {
-    return this.firestore.collection('contenido', ref => ref.orderBy('name', 'desc')).snapshotChanges();
+    return this.firestore.collection('contenido', ref => ref.orderBy('creationDate', 'desc')).snapshotChanges();
   }
 
   dataTranfer(content: ContenidoModel) {
@@ -32,5 +32,12 @@ export class ContenidoService {
     return this.firestore.collection('contenido').add(content);
   }
 
+  getContentByEmail(email: string | null | undefined):Observable<unknown> {
+    return this.firestore.collection('contenido', ref => ref.where('email', '==', email)).snapshotChanges();
+  }
+
+  deleteContent(id: string | undefined) {
+    return this.firestore.collection('contenido').doc(id).delete();
+  }
 
 }

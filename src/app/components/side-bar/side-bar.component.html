@@ -1,6 +1,11 @@
-<h3>Categories</h3>
-<span class="btn btn-warning" [hidden]="active" (click)="clearFilter()">Clear</span>
+
+<div class="row">
+    <h3 class="col-lg-8">Categories</h3>
+    <span class="btn btn-warning col-lg-4" [hidden]="active" (click)="clearFilter()">Clear</span>
+</div>
 <hr>
-<div class="container" *ngFor="let data of listCategories">
-    <p class="hoverCategories" (click)="filterByCategory(data)">{{data}}</p>
+<div class="list-group" *ngFor="let data of listCategories">
+    <label class="list-group-item text-start">
+        <span class="hoverCategories" (click)="filterByCategory(data)">{{data}}</span>
+    </label>
 </div>

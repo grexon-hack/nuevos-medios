@@ -4,9 +4,11 @@
         <div class="col-lg-3">
             <app-side-bar (newFilterEvent)="handlerChange($event)"></app-side-bar>
         </div>
-        <div class="col-lg-8">
-            <app-card-contenido [filterContent]="(currentFilter)"></app-card-contenido>
+        <div class="col-lg-8 max-height" [ngClass]="{scroll:lengthArray > 2}">
+            <app-card-contenido 
+            [filterContent]="(currentFilter)"
+            (lengthArray)="handlerLengthArray($event)"
+            ></app-card-contenido>
         </div>
     </div>
-    
 </div>

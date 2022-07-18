@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ContenidoModel } from 'src/app/models/Contenido.model';
 import { ContenidoService } from 'src/app/services/contenido.service';
 
@@ -11,12 +11,12 @@ export class CardContenidoComponent implements OnInit {
   listContent: ContenidoModel[] = [];
 
   @Input() filterContent:ContenidoModel[];
+  @Output() lengthArray = new EventEmitter<number>();
 
   constructor(private contentService: ContenidoService) { }
 
   ngOnInit(): void {
-     this.getAllContent();
-
+    this.getAllContent();
   }
   ngOnChanges(changes: SimpleChanges) {
     if(this.filterContent.length) {
@@ -46,6 +46,7 @@ export class CardContenidoComponent implements OnInit {
           ...element.payload.doc.data()
         })
       });
+      this.lengthArray.emit(this.listContent.length);
     })
   }
 

@@ -8,15 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit{
 
   currentFilter = [];
+  lengthArray:number;
 
   handlerChange(event: any) {
     this.currentFilter = event;
+    console.log(event)
+  }
+
+  handlerLengthArray(event: number) {
+    this.lengthArray = event;
+    console.log(event)
   }
 
   constructor(
     ) {}
 
   ngOnInit(): void {
+    
   }
 
 }
