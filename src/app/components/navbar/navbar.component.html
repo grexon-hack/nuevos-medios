@@ -7,8 +7,8 @@
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
       <li><a routerLink="/" class="nav-link px-2 link-dark">Home</a></li>
-      <li [hidden]="!userActive"><a href="#"  class="nav-link px-2 link-dark">New Post</a></li>
-      <li [hidden]="!userActive"><a href="#" class="nav-link px-2 link-dark">My post</a></li>
+      <li [hidden]="!userActive"><a routerLink="/create-post"class="nav-link px-2 link-dark">New Post</a></li>
+      <li [hidden]="!userActive"><a routerLink="/my-posts" class="nav-link px-2 link-dark">My post</a></li>
     </ul>
 
     <div class="col-md-3 text-end">

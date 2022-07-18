@@ -1,0 +1,147 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="body mb-5">
+    <h5>Create post</h5>
+    <hr />
+    <form (ngSubmit)="dispathCreatorPost()" [formGroup]="createPost">
+      <div class="mb-6">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          id="exampleFormControlInput1"
+          placeholder="Your name"
+        />
+        <span
+          *ngIf="
+            createPost.get('name')?.hasError('required') &&
+            createPost.get('name')?.touched
+          "
+          class="text-danger ms-2"
+          >Your name is required</span
+        >
+        <span
+          *ngIf="
+            createPost.get('name')?.hasError('minlength') &&
+            createPost.get('name')?.touched
+          "
+          class="text-danger ms-2"
+          >Your name must have at least <strong>3</strong> characters</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="title"
+          id="exampleFormControlInput1"
+          placeholder="title post"
+        />
+        <span
+          *ngIf="
+            createPost.get('title')?.hasError('required') &&
+            createPost.get('title')?.touched
+          "
+          class="text-danger ms-2"
+          >Title is required</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Category</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          formControlName="category"
+          id="exampleFormControlInput1"
+          placeholder="action, pasion, educacion, etc..."
+        />
+        <span
+          *ngIf="
+            createPost.get('category')?.hasError('required') &&
+            createPost.get('category')?.touched
+          "
+          class="text-danger ms-2"
+          >Category is required</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Description</label
+        >
+        <textarea
+          class="form-control"
+          formControlName="description"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+        <span
+          *ngIf="
+            createPost.get('description')?.hasError('required') &&
+            createPost.get('description')?.touched
+          "
+          class="text-danger ms-2"
+          >Post description is required</span
+        >
+        <span
+          *ngIf="
+            createPost.get('description')?.hasError('minlength') &&
+            createPost.get('description')?.touched
+          "
+          class="text-danger ms-2"
+          >the description must have at least <strong>35</strong> characters</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Link Image</label
+        >
+        <input
+          type="url"
+          class="form-control"
+          formControlName="image"
+          id="exampleFormControlInput1"
+          placeholder="https://example.com"
+        />
+        <span
+          *ngIf="
+            createPost.get('image')?.hasError('required') &&
+            createPost.get('image')?.touched
+          "
+          class="text-danger ms-2"
+          >Image is required</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Web link</label
+        >
+        <input
+          type="url"
+          class="form-control"
+          formControlName="link"
+          id="exampleFormControlInput1"
+          placeholder="https://example.com"
+        />
+        <span
+          *ngIf="
+            createPost.get('link')?.hasError('required') &&
+            createPost.get('link')?.touched
+          "
+          class="text-danger ms-2"
+          >Web link is required</span
+        >
+      </div>
+      <button
+        [disabled]="createPost.invalid"
+        class="btn btn-primary"
+        type="submit"
+      >
+        Send Post
+      </button>
+    </form>
+  </div>
+</div>

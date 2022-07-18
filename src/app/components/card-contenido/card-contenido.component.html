@@ -12,10 +12,10 @@
     <div class="card-body">
       <h5 class="card-title">{{content.title}}</h5>
       <p class="card-text">
-        {{content.description }}
+        {{content.description.slice(0, content.description.indexOf('.') + 1) }}..
       </p>
       <div class="text-end">
-        <a routerLink="/detail/{{content.id}}" class="btn btn-primary" (click)="sendingContent(content)">Detail</a>
+        <a routerLink="/detail/{{content.id}}" class="btn btn-primary" (click)="sendingContent(content)">View More</a>
       </div>
     </div>
   </div>

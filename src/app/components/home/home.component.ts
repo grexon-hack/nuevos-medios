@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-home',
@@ -16,17 +14,9 @@ export class HomeComponent implements OnInit{
   }
 
   constructor(
-    private userData: AngularFireAuth,
-    private userLogin: UserDataService
     ) {}
 
   ngOnInit(): void {
-    this.userData.currentUser.then(data => {
-      this.userLogin.loginUser({
-        email: data?.email,
-        id: data?.uid
-      })
-    })
   }
 
 }

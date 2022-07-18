@@ -28,5 +28,9 @@ export class ContenidoService {
     return this.firestore.collection('contenido', ref => ref.where('category', '==', data)).snapshotChanges();
   }
 
+  createContent(content: ContenidoModel) {
+    return this.firestore.collection('contenido').add(content);
+  }
+
 
 }

@@ -18,6 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CreatePostComponent } from './components/create-post/create-post.component';
+import { MyPostComponent } from './components/my-post/my-post.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { ToastrModule } from 'ngx-toastr';
     DetailComponent,
     CardContenidoComponent,
     RegisterComponent,
-    RecoverPasswordComponent
+    RecoverPasswordComponent,
+    CreatePostComponent,
+    MyPostComponent
   ],
   imports: [
     BrowserModule,

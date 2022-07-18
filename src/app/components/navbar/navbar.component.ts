@@ -1,7 +1,6 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-navbar',
