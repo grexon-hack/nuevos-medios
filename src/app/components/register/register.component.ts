@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit {
     private route: Router
     ) { 
     this.registerUser = this.fb.group({
-      email : ['', Validators.required],
-      password : ['', Validators.required],
+      email : ['', [Validators.required, Validators.email]],
+      password : ['', [Validators.required, Validators.minLength(6)]],
       repeatPassword : ['', Validators.required]
 
     })
@@ -42,14 +42,21 @@ export class RegisterComponent implements OnInit {
       this.loading = true;
       this.afAuth.createUserWithEmailAndPassword(email, password)
       .then(() => {
-        this.toastr.success('User was successfully registered', 'Exit!')
-        this.route.navigate(['/login']);
+        this.verifyEmail();
       }).catch((error) => {
         this.loading = false;
         this.toastr.error(error.code.slice(5).replaceAll('-', ' '), 'Error');
       })
     }
 
+  }
+
+  verifyEmail() {
+    this.afAuth.currentUser.then( user => user?.sendEmailVerification())
+    .then(() => {
+      this.toastr.success('We have an email for your verification as a user', 'Information!')
+      this.route.navigate(['/login']);
+    })
   }
 
 }

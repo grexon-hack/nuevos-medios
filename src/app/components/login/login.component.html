@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="wrapper">
     <div *ngIf="!loading else load" class="body">
         <img class="logo" src="../../../assets/img/login.png" alt="login-img">
@@ -7,13 +8,37 @@
             <div class="form-floating mb-3">
                 <input type="email" formControlName="email" class="form-control" placeholder="name@example.com">
                 <label>Email address</label>
+                <span
+                *ngIf="
+                  loginUser.get('email')?.hasError('required') &&
+                  loginUser.get('email')?.touched
+                "
+                class="text-danger ms-2"
+                >Email is required</span
+              >
+              <span
+                *ngIf="
+                  loginUser.get('email')?.hasError('email') &&
+                  loginUser.get('email')?.touched
+                "
+                class="text-danger ms-2"
+                >Invalid Email</span
+              >
               </div>
               <div class="form-floating">
                 <input type="password" formControlName="password" class="form-control"placeholder="Password">
                 <label>Password</label>
+                <span
+                *ngIf="
+                  loginUser.get('password')?.hasError('required') &&
+                  loginUser.get('password')?.touched
+                "
+                class="text-danger ms-2"
+                >Password is required</span
+              >
             </div>
             <div class="d-grid gap-2 mt-3">
-                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                <button type="submit" [disabled]="loginUser.invalid" class="btn btn-primary btn-lg">Login</button>
             </div>
             <p>You don't have an account <a routerLink="/register">Register</a></p>
             <p><i class="fas fa-key"></i> <a routerLink="/recover-password">Recover password</a></p>

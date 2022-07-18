@@ -19,6 +19,7 @@ import { RecoverPasswordComponent } from './components/recover-password/recover-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+
 @NgModule({
   declarations: [
     AppComponent,

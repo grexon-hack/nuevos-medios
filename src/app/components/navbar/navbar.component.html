@@ -1,18 +1,25 @@
-<div class="fijo">
-  <nav class="navbar navbar-expand-lg bg-primary">
-      <div class="container-fluid text-white">
-          <h4 class="navbar-brand text-dark">Nuevos Medios</h4>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-3">
-            <span style="cursor:pointer" aria-current="page" routerLink="/">Home</span>
-          </div>
-        </div>
-        <div class="float-right me-4">
-          <i style="cursor:pointer" class="fas fa-user-alt" routerLink="/login"></i>
-        </div>
+
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <div  class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <h3>Nuevos<strong>M</strong>edios</h3>
+    </div>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a routerLink="/" class="nav-link px-2 link-dark">Home</a></li>
+      <li [hidden]="!userActive"><a href="#"  class="nav-link px-2 link-dark">New Post</a></li>
+      <li [hidden]="!userActive"><a href="#" class="nav-link px-2 link-dark">My post</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <div class="float-right me-4" *ngIf="!userActive else logout">
+        <i style="cursor:pointer; border-radius: 20px; border: solid 1px" class="fas fa-user-alt p-2 btn-outline-primary" routerLink="/login"></i>
       </div>
-    </nav>
+      <ng-template #logout>
+        <div class="float-right me-4">
+          <i style="cursor:pointer; border-radius: 20px; border: solid 1px" class="fa-solid fa-right-from-bracket p-2 btn-outline-primary" (click)="logOut()"></i>
+        </div>
+      </ng-template>
+    </div>
+  </header>
 </div>

@@ -33,14 +33,19 @@ export class LoginComponent implements OnInit {
     const password = this.loginUser.value.password;
     this.loading = true;
     this.afAuth.signInWithEmailAndPassword(email, password)
-    .then(() => {
-      this.route.navigate(['/']);
-      this.toastr.success('to the application NuevosMedios', 'Welcome')
+    .then((data) => {
+      if(data.user?.emailVerified) {
+        this.route.navigate(['/']);
+        this.toastr.success('to the application NuevosMedios', 'Welcome')
+      }else {
+        this.toastr.info('We have sent you an email, please verify it so you can enter the application', 'Information!');
+        this.loading = false;
+        this.loginUser.reset();
+      }
     })
     .catch((error) => {
       this.loading = false;
       this.toastr.error(error.code.slice(5).replaceAll('-', ' '), 'Error');
     })
   }
-
 }

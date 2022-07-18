@@ -1,31 +1,77 @@
 <div class="wrapper">
-    <div *ngIf="!loading else load"  class="body">
-        <img class="logo" src="../../../assets/img/login.png" alt="login-img">
-        <h1>Register</h1>
-        <form (ngSubmit)="register()"[formGroup]="registerUser">
-
-            <div class="form-floating mb-3">
-                <input type="email" formControlName="email" class="form-control" placeholder="name@example.com">
-                <label>Email address</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="password" formControlName="password" class="form-control"placeholder="Password">
-                <label>Password</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" formControlName="repeatPassword" class="form-control"placeholder="Repeat password">
-                <label>Repeat password</label>
-                <p class="text-danger">{{error}}</p>
-            </div>
-            <div class="d-grid gap-2 my-3">
-                <button type="submit" class="btn btn-primary btn-lg">Register</button>
-            </div>
-             <a routerLink="/login">Back</a>
-        </form>
+  <div *ngIf="!loading; else load" class="body">
+    <img class="logo" src="../../../assets/img/login.png" alt="login-img" />
+    <h1>Register</h1>
+    <form (ngSubmit)="register()" [formGroup]="registerUser">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="name@example.com"
+        />
+        <label>Email address</label>
+        <span
+          *ngIf="
+            registerUser.get('email')?.hasError('required') &&
+            registerUser.get('email')?.touched
+          "
+          class="text-danger ms-2"
+          >Email is required</span
+        >
+        <span
+          *ngIf="
+            registerUser.get('email')?.hasError('email') &&
+            registerUser.get('email')?.touched
+          "
+          class="text-danger ms-2"
+          >Invalid Email</span
+        >
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Password"
+        />
+        <label>Password</label>
+        <span
+          *ngIf="
+            registerUser.get('password')?.hasError('required') &&
+            registerUser.get('password')?.touched
+          "
+          class="text-danger ms-2"
+          >Password is required</span
+        >
+        <span
+          *ngIf="
+            registerUser.get('password')?.hasError('minlenth') &&
+            registerUser.get('password')?.touched
+          "
+          class="text-danger ms-2"
+          >Invalid Password (min 6 characters)</span
+        >
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          formControlName="repeatPassword"
+          class="form-control"
+          placeholder="Repeat password"
+        />
+        <label>Repeat password</label>
+        <p class="text-danger">{{ error }}</p>
+      </div>
+      <div class="d-grid gap-2 my-3">
+        <button type="submit" [disabled]="registerUser.invalid" class="btn btn-primary btn-lg">Register</button>
+      </div>
+      <a routerLink="/login">Back</a>
+    </form>
+  </div>
+  <ng-template #load>
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
     </div>
-    <ng-template #load>
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </ng-template>
+  </ng-template>
 </div>
