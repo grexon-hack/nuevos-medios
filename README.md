@@ -3,9 +3,26 @@
 Application created with the Javascript Framework (Angular) and Firebase with non-relational database.
 
  <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a>
- <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a>
+ <a href="https://angular.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" alt="angular" width="40" height="40"/> </a>
+  <a href="https://angular.com/" target="_blank" rel="noreferrer"> <img src=https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg alt="bootstrap" width="40" height="40"/> </a>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+
+The application was created for users who publish advertising content, such as news or relevant topics that may interest the general public.
+when starting the user can interact with the published topics and look at the details of said topics,
+If the user wants to interact more with the application, he must log in, so that his data is stored in the firebase database.
+a new user must register their data, when doing so they must go to their email to validate their entry to the platform after that you can enter.
+
+Upon entering after logging in and having validated their information, the user will be able to create their own publications and store them in 
+their own component, and in turn will also be able to delete them.
+
+
+
+
+
+
+
+
 
 ## Development server
 
