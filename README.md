@@ -16,23 +16,38 @@ a new user must register their data, when doing so they must go to their email t
 Upon entering after logging in and having validated their information, the user will be able to create their own publications and store them in 
 their own component, and in turn will also be able to delete them.
 
-<img src="./src/assets/img/Captura.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura1.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura2.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura3.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura4.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura5.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura6.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura7.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura8.PNG" alt="NuevosMedios" width="240" height="190"/>
-<img src="./src/assets/img/Captura9.PNG" alt="NuevosMedios" width="240" height="190"/>
+## unregistered user view
+<div style='display: flex'>
+<img src="./src/assets/img/Captura.PNG" alt="NuevosMedios" width="340" height="190"/>
+<img src="./src/assets/img/Captura2.PNG" alt="NuevosMedios" width="340" height="190"/>
+<img src="./src/assets/img/Captura3.PNG" alt="NuevosMedios" width="340" height="190"/>
+</div>
+
+## Login
+
+<div>
+<img src="./src/assets/img/Captura4.PNG" alt="NuevosMedios" width="340" height="190"/>
+<img src="./src/assets/img/Captura5.PNG" alt="NuevosMedios" width="340" height="190"/>
+<img src="./src/assets/img/Captura6.PNG" alt="NuevosMedios" width="340" height="190"/>  
+</div>
+
+## registered user view
+<div>
+<img src="./src/assets/img/Captura1.PNG" alt="NuevosMedios" width="340" height="190"/>
+<img src="./src/assets/img/Captura7.PNG" alt="NuevosMedios" width="340" height="190"/>
+<img src="./src/assets/img/Captura8.PNG" alt="NuevosMedios" width="340" height="190"/>
+<img src="./src/assets/img/Captura9.PNG" alt="NuevosMedios" width="340" height="190"/>
+</div>  
 
 
+## hey! don't forget this
 
+when downloading the project do not forget to do **npm install**
+to install all the dependencies found in the **Package.json**
 
+**and if you have knowledge of firebase and you already have it previously configured in your browser, it will be easier for you**
 
-
-
+if not, click on this link [Configuracion Firebase](https://firebase.google.com/)
 
 
 ## Development server
