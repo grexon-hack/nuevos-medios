@@ -1,0 +1,15 @@
+.animation {
+    transition: 1s;
+    animation: shower 1s ease-in;
+}
+
+@keyframes shower {
+    0%{
+        transform: translate(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}

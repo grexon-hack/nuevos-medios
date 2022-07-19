@@ -4,3 +4,47 @@
 .scroll {
     overflow-y:scroll;
 }
+.scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.scroll::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.scroll::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.scroll::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.scroll::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.side-bar {
+    background-color: rgba(240, 248, 255, 0.356);
+    border-radius: 12px;
+    min-height: 600px;
+    padding-top: 10px;
+}
+
+@media (max-width : 992px) {
+    .side-bar {
+       z-index: 3;
+       background-color: #797979;
+       color: azure;
+       min-height:fit-content;
+       padding-bottom: 20px;
+    }
+    
+    
+}

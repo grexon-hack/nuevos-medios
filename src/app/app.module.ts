@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { MyPostComponent } from './components/my-post/my-post.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MyPostComponent } from './components/my-post/my-post.component';
     RegisterComponent,
     RecoverPasswordComponent,
     CreatePostComponent,
-    MyPostComponent
+    MyPostComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

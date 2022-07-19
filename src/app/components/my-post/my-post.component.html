@@ -1,21 +1,21 @@
 <app-navbar></app-navbar>
 <div class="wrapper">
-    <div class="container">
-        <h3>{{currentEmail}}</h3>
+  <div class="container" *ngIf="!isEmpty else withoutPost">
+      <h3>{{currentEmail}}</h3>
         <div *ngFor="let post of myPosts">
             <div class="card mb-2 text-start">
                 <div class="container card-header">
                   <div class="row">
                     <div class="col-lg-11">{{post.category}}</div>
                     <div class="col-lg-1">
-                        <i class="fa-solid fa-trash-can" (click)="deletePost(post.id)"></i>
+                        <i class="fa-solid fa-trash-can btn" (click)="deletePost(post.id)"></i>
                     </div>
                   </div>
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">{{post.title}}</h5>
                   <p class="card-text">
-                    {{post.description.slice(0, post.description.indexOf('.') + 1) }}..
+                    {{post.description.slice(0, post.description.indexOf('.') + 1) || post.description.slice(0, post.description.indexOf(',') + 1) }}..
                   </p>
                   <div class="text-end">
                     <a routerLink="/detail/{{post.id}}" class="btn btn-primary" (click)="sendingContent(post)">View More</a>
@@ -24,4 +24,12 @@
               </div>
         </div>
     </div>
+    <ng-template #withoutPost>
+      <div class="container text-center">
+        <h3>{{currentEmail}}</h3>
+        <br>
+        <br>
+        <strong>Create your first post</strong>
+      </div>
+    </ng-template>
 </div>

@@ -9,11 +9,13 @@ import { ContenidoService } from 'src/app/services/contenido.service';
 })
 export class CardContenidoComponent implements OnInit {
   listContent: ContenidoModel[] = [];
-
+  isEmpty:boolean = false;
   @Input() filterContent:ContenidoModel[];
   @Output() lengthArray = new EventEmitter<number>();
 
-  constructor(private contentService: ContenidoService) { }
+  constructor(
+    private contentService: ContenidoService
+    ) { }
 
   ngOnInit(): void {
     this.getAllContent();
@@ -40,12 +42,16 @@ export class CardContenidoComponent implements OnInit {
     this.contentService.listarContenido()
     .subscribe(data => {
       this.listContent = [];
-      data.forEach((element: any) => {
-        this.listContent.push({
-          id: element.payload.doc.id,
-          ...element.payload.doc.data()
-        })
-      });
+      if(data.length) {
+        data.forEach((element: any) => {
+          this.listContent.push({
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+          })
+        });
+      }else {
+        this.isEmpty = true;
+      }
       this.lengthArray.emit(this.listContent.length);
     })
   }
@@ -53,5 +59,4 @@ export class CardContenidoComponent implements OnInit {
   sendingContent(content: ContenidoModel) {
     this.contentService.dataTranfer(content);
   }
-
 }

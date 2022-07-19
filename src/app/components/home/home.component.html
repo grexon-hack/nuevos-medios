@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container mt-6 text-center">
     <div class="row mt-4">
-        <div class="col-lg-3">
+        <div class="col-lg-3 side-bar" >
             <app-side-bar (newFilterEvent)="handlerChange($event)"></app-side-bar>
         </div>
         <div class="col-lg-8 max-height" [ngClass]="{scroll:lengthArray > 2}">

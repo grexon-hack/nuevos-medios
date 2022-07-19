@@ -10,6 +10,8 @@ import { ContenidoService } from 'src/app/services/contenido.service';
   styleUrls: ['./my-post.component.css']
 })
 export class MyPostComponent implements OnInit {
+
+  isEmpty:boolean = false;
   myPosts:ContenidoModel[] = [];
   currentEmail:string | null | undefined;
   constructor(
@@ -24,12 +26,17 @@ export class MyPostComponent implements OnInit {
       .then(() => this.contentService.getContentByEmail(this.currentEmail)
       .subscribe((data: any) => {
         this.myPosts = [];
-        data.forEach((element:any) => {
-          this.myPosts.push({
-            id: element.payload.doc.id,
-            ...element.payload.doc.data()
-          })
-        });
+        if(data.length) {
+          data.forEach((element:any) => {
+            this.myPosts.push({
+              id: element.payload.doc.id,
+              ...element.payload.doc.data()
+            })
+          });
+        }
+        else {
+          this.isEmpty = true;
+        }
       })
       )
     } catch {

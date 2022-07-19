@@ -1,0 +1,8 @@
+.container-navbar {
+    width: 100%;
+    background-color: aliceblue;
+}
+
+a:hover {
+    font-weight: 600;
+}

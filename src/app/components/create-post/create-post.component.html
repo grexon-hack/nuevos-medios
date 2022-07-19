@@ -1,52 +1,55 @@
 <app-navbar></app-navbar>
 <div class="wrapper">
-  <div class="body mb-5">
+  <div class="body mb-5" *ngIf="!loading else load">
     <h5>Create post</h5>
     <hr />
     <form (ngSubmit)="dispathCreatorPost()" [formGroup]="createPost">
-      <div class="mb-6">
-        <label for="exampleFormControlInput1" class="form-label">Name</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="name"
-          id="exampleFormControlInput1"
-          placeholder="Your name"
-        />
-        <span
-          *ngIf="
-            createPost.get('name')?.hasError('required') &&
-            createPost.get('name')?.touched
-          "
-          class="text-danger ms-2"
-          >Your name is required</span
-        >
-        <span
-          *ngIf="
-            createPost.get('name')?.hasError('minlength') &&
-            createPost.get('name')?.touched
-          "
-          class="text-danger ms-2"
-          >Your name must have at least <strong>3</strong> characters</span
-        >
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Title</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="title"
-          id="exampleFormControlInput1"
-          placeholder="title post"
-        />
-        <span
-          *ngIf="
-            createPost.get('title')?.hasError('required') &&
-            createPost.get('title')?.touched
-          "
-          class="text-danger ms-2"
-          >Title is required</span
-        >
+      <div class="row">
+
+        <div class="mb-6 col-lg-6">
+          <label for="exampleFormControlInput1" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            id="exampleFormControlInput1"
+            placeholder="Your name"
+          />
+          <span
+            *ngIf="
+              createPost.get('name')?.hasError('required') &&
+              createPost.get('name')?.touched
+            "
+            class="text-danger ms-2"
+            >Your name is required</span
+          >
+          <span
+            *ngIf="
+              createPost.get('name')?.hasError('minlength') &&
+              createPost.get('name')?.touched
+            "
+            class="text-danger ms-2"
+            >Your name must have at least <strong>3</strong> characters</span
+          >
+        </div>
+        <div class="mb-3 col-lg-6">
+          <label for="exampleFormControlInput1" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="title"
+            id="exampleFormControlInput1"
+            placeholder="title post"
+          />
+          <span
+            *ngIf="
+              createPost.get('title')?.hasError('required') &&
+              createPost.get('title')?.touched
+            "
+            class="text-danger ms-2"
+            >Title is required</span
+          >
+        </div>
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label"
@@ -144,4 +147,7 @@
       </button>
     </form>
   </div>
+  <ng-template #load>
+    <h2>Publishing...</h2>
+  </ng-template>
 </div>

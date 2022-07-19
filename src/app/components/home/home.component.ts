@@ -12,12 +12,10 @@ export class HomeComponent implements OnInit{
 
   handlerChange(event: any) {
     this.currentFilter = event;
-    console.log(event)
   }
 
   handlerLengthArray(event: number) {
     this.lengthArray = event;
-    console.log(event)
   }
 
   constructor(

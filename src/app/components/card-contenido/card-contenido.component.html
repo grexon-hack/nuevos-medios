@@ -1,22 +1,29 @@
-
-<div class="container" [ngClass]="{scroll: listContent.length > 2}" *ngFor="let content of listContent let i = index">
-  <div class="card mb-2 text-start">
-    <div class="container card-header">
-      <div class="row">
-        <div class="col-lg-11">{{content.category}}</div>
-        <div class="col-lg-1">
-          <i class="fas fa-check-circle"></i>
+<div *ngIf="!isEmpty else EmptyPage">
+  <div class="container" [ngClass]="{scroll: listContent.length > 2}" *ngFor="let content of listContent let i = index">
+    <div class="card mb-2 text-start">
+      <div class="container card-header">
+        <div class="row">
+          <div class="col-lg-11">{{content.category}}</div>
         </div>
       </div>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{content.title}}</h5>
-      <p class="card-text">
-        {{content.description.slice(0, content.description.indexOf('.') + 1) }}..
-      </p>
-      <div class="text-end">
-        <a routerLink="/detail/{{content.id}}" class="btn btn-primary" (click)="sendingContent(content)">View More</a>
+      <div class="card-body">
+        <h5 class="card-title">{{content.title}}</h5>
+        <p class="card-text">
+          {{content.description.slice(0, content.description.indexOf('.') + 1) || content.description.slice(0, content.description.indexOf(',') + 1) }}..
+        </p>
+        <div class="text-end">
+          <a routerLink="/detail/{{content.id}}" class="btn btn-primary" (click)="sendingContent(content)">View More</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<div class="spinner-border text-primary" role="status" *ngIf="!listContent.length">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<ng-template #EmptyPage>
+  <h1>Empty Page</h1>
+  <br>
+  <p>You can be the first to post</p>
+  <img src="../../../assets/img/sorry.png" alt="Empty page image">
+</ng-template>
