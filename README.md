@@ -1,5 +1,9 @@
 # NuevosMedios
 
+Application created with the Javascript Framework (Angular) and Firebase with non-relational database.
+
+ <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
 ## Development server
