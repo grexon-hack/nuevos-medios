@@ -16,16 +16,16 @@ a new user must register their data, when doing so they must go to their email t
 Upon entering after logging in and having validated their information, the user will be able to create their own publications and store them in 
 their own component, and in turn will also be able to delete them.
 
-<img src="./src/assets/img/Captura.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura1.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura2.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura3.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura4.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura5.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura6.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura7.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura8.PNG" alt="NuevosMedios" width="40" height="40"/>
-<img src="./src/assets/img/Captura9.PNG" alt="NuevosMedios" width="40" height="40"/>
+<img src="./src/assets/img/Captura.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura1.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura2.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura3.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura4.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura5.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura6.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura7.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura8.PNG" alt="NuevosMedios" width="140" height="90"/>
+<img src="./src/assets/img/Captura9.PNG" alt="NuevosMedios" width="140" height="90"/>
 
 
 
