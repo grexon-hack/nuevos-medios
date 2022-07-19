@@ -23,7 +23,16 @@ export class DetailComponent implements OnInit {
     this.contentService.detailContent$.subscribe(data => {
       data.forEach((last, index) => {
         if(index === data.length - 1) {
-          this.detail.push(last)
+          this.detail.push({
+            name: last.name,
+            title: last.title,
+            link: last.link,
+            description: last.description,
+            image: last.image,
+            creationDate: last.creationDate.toDate(),
+            email: last.email,
+            category: last.category
+          })
         }
       })
     })
