@@ -3,8 +3,8 @@
 Application created with the Javascript Framework (Angular) and Firebase with non-relational database.
 
  <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a>
- <a href="https://angular.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" alt="angular" width="40" height="40"/> </a>
-  <a href="https://bootstrap.com/" target="_blank" rel="noreferrer"> <img src=https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg alt="bootstrap" width="40" height="40"/> </a>
+ <a href="https://angular.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" alt="angular" width="40" height="40"/> </a>
+  <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer"> <img src=https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg alt="bootstrap" width="40" height="40"/> </a>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
